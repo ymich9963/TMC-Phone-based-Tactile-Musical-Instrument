@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="120dp"
+        android:layout_height="276dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/spinner_synth_sender"
+        app:layout_constraintEnd_toStartOf="@+id/divider2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <CheckBox
+            android:id="@+id/cb_sin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="onCheckboxClicked"
+            android:text="Sine Wave" />
+
+        <CheckBox
+            android:id="@+id/cb_saw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="onCheckboxClicked"
+            android:text="Saw Wave" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editTextTextPersonName4"
+        android:layout_width="109dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:clickable="false"
+        android:editable="false"
+        android:ems="10"
+        android:fontFamily="sans-serif-black"
+        android:includeFontPadding="true"
+        android:inputType="none"
+        android:text="Effects"
+        android:textAlignment="textStart"
+        app:layout_constraintBottom_toTopOf="@+id/layout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.804"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.813"
+        tools:ignore="Deprecated,TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="109dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@null"
+        android:clickable="false"
+        android:editable="false"
+        android:ems="10"
+        android:fontFamily="sans-serif-black"
+        android:inputType="none"
+        android:longClickable="false"
+        android:text="Sound"
+        app:layout_constraintBottom_toTopOf="@+id/layout1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.146"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.828"
+        tools:ignore="Deprecated,TouchTargetSizeCheck" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="1dp"
+        android:layout_height="300dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/tbSetReset"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.691" />
+
+    <ToggleButton
+        android:id="@+id/tbSetReset"
+        android:layout_width="139dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="176dp"
+        android:alpha="0.5"
+        android:backgroundTint="#DF8D13"
+        android:clickable="true"
+        android:enabled="false"
+        android:onClick="onButtonClicked"
+        android:text="Set/Reset"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/black"
+        android:textOff="Set"
+        android:textOn="Reset"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/layout2"
+        android:layout_width="156dp"
+        android:layout_height="273dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/spinner_synth_sender"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider2"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <CheckBox
+            android:id="@+id/cb_pitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onCheckboxClicked"
+            android:text="Pitch" />
+
+        <CheckBox
+            android:id="@+id/cb_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onCheckboxClicked"
+            android:text="Shorter Notes" />
+
+        <CheckBox
+            android:id="@+id/cb_bend_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onCheckboxClicked"
+            android:text="Note Bend Up" />
+
+        <CheckBox
+            android:id="@+id/cb_bend_down"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onCheckboxClicked"
+            android:text="Note Bend Down" />
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spinner_synth_sender"
+        android:layout_width="294dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbSetReset"
+        app:layout_constraintVertical_bias="0.222" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
